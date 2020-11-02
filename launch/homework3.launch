@@ -1,5 +1,5 @@
 <launch>
-    <rosparam command="load" file="$(find dialogflow_ros)/config/params.yaml" ns="/dialogflow_client"/>
+    <rosparam command="load" file="$(find homework3)/config/params.yaml" ns="/dialogflow_client"/>
     <node name="dialogflow_client" pkg="dialogflow_ros" type="dialogflow_client.py" output="screen"/>
     <node name="homework3" pkg="homework3" type="chatbot_node.py" output="screen"/>
 
