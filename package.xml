@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-<name>homework3</name>
+<name>political_chatbot</name>
 	<version>0.0.0</version>
 	<description>This is an example package for creating a topic publisher</description>
 	<maintainer email="abc@xyz.com">ABC</maintainer>
