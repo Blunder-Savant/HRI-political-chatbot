@@ -17,8 +17,8 @@ session_path = session_client.session_path("hri-project-tpsj", "vibes")
 
 language_code = "en-US"
 
-client = roslibpy.Ros(host='localhost', port=9090)
-client.run()
+#client = roslibpy.Ros(host='localhost', port=9090)
+#client.run()
 
 
 class listener:
@@ -34,7 +34,7 @@ class listener:
 
 
     rospy.init_node('listener', anonymous=True)
-    self.df_talker = roslibpy.Topic(client, '/vibe', 'std_msgs/Float64')
+    #self.df_talker = roslibpy.Topic(client, '/vibe', 'std_msgs/Float64')
 
   def callback(self, data):
     text_input = dialogflow.types.TextInput(text=data.query_text, language_code=language_code)
@@ -74,6 +74,5 @@ if __name__ == '__main__':
             listener()
             rospy.spin()
         except rospy.ROSInterruptException:
-            client.terminate()
+            #client.terminate()
             pass
-        
