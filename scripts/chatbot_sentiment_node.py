@@ -38,10 +38,6 @@ class listener:
 
   def callback(self, data):
     text_input = dialogflow.types.TextInput(text=data.query_text, language_code=language_code)
-        
-    question_num = int(data.intent[1:3])  # extract question number from intent string
-
-
 
     query_input = dialogflow.types.QueryInput(text=text_input)
 
@@ -57,9 +53,15 @@ class listener:
         session=session_path, query_input=query_input,
         query_params=query_params)
 
-    if question_num > 1:  # test questions with relevant sentiment scores
+    try:   
+        question_num = int(data.intent[1:3])  # extract question number from intent string
+
+        if question_num > 1:  # test questions with relevant sentiment scores
             csvwriter.writerow([question_num - 1, response.query_result.sentiment_analysis_result.query_text_sentiment.score])
             file.flush()
+            
+    except ValueError:
+        pass  # not a valid intent
 
     self.vibe_out.publish(response.query_result.sentiment_analysis_result.query_text_sentiment.score)
     self.vibe_out_strength.publish(response.query_result.sentiment_analysis_result.query_text_sentiment.magnitude)
