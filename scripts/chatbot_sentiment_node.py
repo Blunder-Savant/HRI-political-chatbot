@@ -13,7 +13,7 @@ from dialogflow_ros.msg import DialogflowContext
 
 session_client = dialogflow.SessionsClient()
 
-session_path = session_client.session_path("homework3-adejonge-bnvx", "vibes")
+session_path = session_client.session_path("hri-project-tpsj", "vibes")
 
 language_code = "en-US"
 
@@ -28,6 +28,10 @@ class listener:
 
     self.vibe_out = rospy.Publisher('vibe', Float64, queue_size=10)
     self.vibe_out_strength = rospy.Publisher('vibe_strength', Float64, queue_size=10)
+    self.horizontal_alignment = rospy.Publisher('horizontal_alignment', Float64, queue_size=10)
+    self.vertical_alignment = rospy.Publisher('vertical_alignment', Float64, queue_size=10)
+
+
 
     rospy.init_node('listener', anonymous=True)
     self.df_talker = roslibpy.Topic(client, '/vibe', 'std_msgs/Float64')
