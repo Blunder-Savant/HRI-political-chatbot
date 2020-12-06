@@ -2,6 +2,11 @@
 
 An experiment for ECE4900 - HRI
 
+## Dependencies
+python 2.7
+PyAudio
+dialogflow_ros
+
 ## Usage
 Step 1:  Save Repo inside a ROS directory (/home/user/hri_course_ws/src/)
 
