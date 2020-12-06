@@ -3,10 +3,10 @@
 An experiment for ECE4900 - HRI
 
 ## Dependencies
-python 2.7
-PyAudio
-dialogflow_ros
-dialogflow
+- python 2.7
+- PyAudio
+- dialogflow_ros
+- dialogflow
 
 ## Google Cloud Setup
 Follow the instructions [here](https://cloud.google.com/speech/docs/quickstart) for configuring your Google Cloud project and installing the SDK for authentication. You will need a google/gmail account.
