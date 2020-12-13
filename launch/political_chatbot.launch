@@ -1,7 +1,7 @@
 <launch>
     <rosparam command="load" file="$(find political_chatbot)/config/params.yaml" ns="/dialogflow_client"/>
     <node name="dialogflow_client" pkg="dialogflow_ros" type="dialogflow_client.py" output="screen"/>
-    <node name="mic_client" pkg="dialogflow_ros" type="mic_client.py" output="screen"/>
-	<node name="political_chatbot" pkg="political_chatbot" type="chatbot_sentiment_node.py" output="screen"/>
+    <node name="mic_client" pkg="dialogflow_ros" type="mic_client.py" respawn="true" output="screen"/>
+    <node name="political_chatbot" pkg="political_chatbot" type="chatbot_sentiment_node.py" output="screen"/>
 
 </launch>
